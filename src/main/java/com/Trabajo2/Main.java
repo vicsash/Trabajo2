@@ -22,9 +22,11 @@ public class Main {
                 case 1:
 
                     playerNumber  = firtsSixNumber();
-                    System.out.println("Placeholder for game options");
-                    System.out.println("1-Single game, 2-Play till prize,3-Play till prize without reintegro");
-                    System.out.println("4- play 100 games, 5- Play until,0-exit");
+                    System.out.println("************************************************************************");
+                    System.out.println("* Placeholder for game options                                         *");
+                    System.out.println("* 1-Single game, 2-Play till prize,3-Play till prize without reintegro *");
+                    System.out.println("* 4- play 100 games, 5- Play until,0-exit                              *");
+                    System.out.println("************************************************************************");
                     //PLACED HERE TO SEE THE RANDOM NUMBER THAT WAS GENERATED USING RAND
                     //TEMPORARY PLACE TO CONFIRM THAT IT WORKS
                     System.out.println(Arrays.toString(playerNumber));
