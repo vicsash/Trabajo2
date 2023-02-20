@@ -5,18 +5,18 @@ import java.util.Random;
 
 public class Bombo {
 
-    private int[] rolledNums = new int[6];
+    private int[] primerBombo = new int[6];
     private int complemento;
     private int reintegro;
 
     public Bombo() {
-        this.rolledNums = primerBombo();
+        this.primerBombo = primerBombo();
         this.complemento = complemento();
         this.reintegro = reintegro();
     }
 
     public int[] getRolledNums() {
-        return rolledNums;
+        return primerBombo;
     }
     public int getComplemento() {
         return complemento;
@@ -28,12 +28,16 @@ public class Bombo {
     @Override
     public String toString() {
         return "Bombo{" +
-                "rolledNums=" + Arrays.toString(rolledNums) +
+                "rolledNums=" + Arrays.toString(primerBombo) +
                 ", complemento=" + complemento +
                 ", reintegro=" + reintegro +
                 '}';
     }
 
+    /**
+     * Generates an array that is filled with 6
+     * @return Array of 6 rand nums.
+     */
     private int[] primerBombo() {
         int num;
         int[] numArr = new int[6];
@@ -46,6 +50,10 @@ public class Bombo {
         return numArr;
     }
 
+    /**
+     * Generates a number between 1 and 49 separate from primerBombo.
+     * @return Num between 1-49.
+     */
     private int complemento() {
         int num;
         do {
@@ -54,21 +62,28 @@ public class Bombo {
         return num;
     }
 
+    /**
+     * Generates a random number between 0 and 9.
+     * @return Num between 0-9.
+     */
     private int reintegro() {
         return randNum(0, 9);
     }
 
+    /**
+     * Resets the array.
+     */
     private void reset() {
-        for (int item : this.rolledNums) {
+        for (int item : this.primerBombo) {
             item = 0;
         }
     }
 
     /**
      * Generates random number between the two inputs.
-     * @param min
-     * @param max
-     * @return returns random num between
+     * @param min Min num.
+     * @param max Max num.
+     * @return Random num between min-max.
      */
     private int randNum(int min, int max) {
         Random rand = new Random();
@@ -80,11 +95,11 @@ public class Bombo {
 
     /**
      * Checks if rolledNums contains a number.
-     * @param num num to check
-     * @return returns true or false depending on if the num is in arr
+     * @param num Num to check.
+     * @return True or false depending on if the num is in arr.
      */
     private boolean containsNum(int num) {
-        for (int item : rolledNums) {
+        for (int item : primerBombo) {
             if (item == num)
                 return true;
         }
