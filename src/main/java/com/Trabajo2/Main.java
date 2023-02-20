@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     static Random rand = new Random();
+    //private int reintegro;
+    //int complemntNumber;
     static Scanner lector = new Scanner(System.in);
 
     public static void main(String[] args){
@@ -30,7 +32,6 @@ public class Main {
                         submenu = lector.nextInt();
                         lector.nextLine();
                         switch (submenu) {
-                            //Single game
                             case 1:
                                 System.out.println("Quieres numeros aleatorios? (S/N)");
                                 userInStr = lector.nextLine();
@@ -45,25 +46,24 @@ public class Main {
                                         lector.nextLine();
                                     }
                                 }
+
                                 System.out.println(juego.juegoUnico(userNums));
+
                                 subMenu();
+
                                 break;
-                                //Play game until prize
                             case 2:
                                 System.out.println("2");
-                                // Play game until prize without "reintegro"
+                                break;
                             case 3:
                                 System.out.println("3");
                                 break;
-                                //Play a hundred games
                             case 4:
                                 System.out.println("4");
                                 break;
-                                //Play until special prize is won
                             case 5:
                                 System.out.println("5");
                                 break;
-                                //Exit
                             case 0:
                                 System.out.println("0");
                                 break;
@@ -72,20 +72,16 @@ public class Main {
                                 break;
                         }
                     }while(submenu != 0);
-                    //Exit the game completely
                 case 0:
-                    break;
                 default:
-                    System.out.println("Introduce 1 o 0");
-                    break;
+
             }
         }while(menu != 0);
-        System.out.println("Muchas gracias por jugar. Que tenga un buen dia");
         lector.close();
     }
 
     /**
-     * Method to print out the main menu
+     * Metodo para imprimir el menu
      */
     private static void menu(){
         System.out.println("************************************");
@@ -96,7 +92,7 @@ public class Main {
     }
 
     /**
-     * Method to print out the sub menu with the six options
+     * Metodo para imprimir el submenu
      */
     private static void subMenu(){
         System.out.println("***********************************");
