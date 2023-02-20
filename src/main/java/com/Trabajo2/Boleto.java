@@ -1,5 +1,4 @@
 package com.Trabajo2;
-import com.Trabajo2.Bombo;
 public class Boleto {
 
     Bombo b = new Bombo();

@@ -17,6 +17,8 @@ public class Main {
         Game juego = new Game();
         int[] userNums = new int[6];
         int userIn;
+        String userInStr;
+        boolean aleatorio = false;
 
         do{
             menu();
@@ -30,11 +32,20 @@ public class Main {
                         lector.nextLine();
                         switch (submenu) {
                             case 1:
-                                System.out.println("Introduce tus numeros. (1-49)");
-                                for (int i = 0; i < 6; i++) {
-                                    userNums[i] = lector.nextInt();
-                                    lector.nextLine();
+                                System.out.println("Quieres numeros aleatorios? (S/N)");
+                                userInStr = lector.nextLine();
+                                if (userInStr.equalsIgnoreCase("s")) {
+                                    for (int i = 0; i < 6; i++) {
+                                        userNums[i] = bombo.primerBombo()[i];
+                                    }
+                                } else {
+                                    System.out.println("Introduce tus numeros. (1-49)");
+                                    for (int i = 0; i < 6; i++) {
+                                        userNums[i] = lector.nextInt();
+                                        lector.nextLine();
+                                    }
                                 }
+
                                 System.out.println(juego.juegoUnico(userNums));
 
                                 subMenu();

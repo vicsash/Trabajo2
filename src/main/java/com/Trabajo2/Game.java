@@ -1,5 +1,7 @@
 package com.Trabajo2;
 
+import java.util.Arrays;
+
 public class Game {
 
     static int gamesWon = 0;
@@ -18,7 +20,7 @@ public class Game {
         int userComplemento = bombo.complemento();
         int userReintegro = bombo.reintegro();
 
-        System.out.println("Tu Complemento: " + userComplemento + " Tu Reintegro: " + userReintegro);
+        System.out.println("Tus Numeros: " + Arrays.toString(userNums) + ", Tu Complemento: " + userComplemento + ", Tu Reintegro: " + userReintegro);
         System.out.println(bombo.toString());
         switch (apuestasPremiadas(userNums, userComplemento, userReintegro, bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro())) {
             case -1:
