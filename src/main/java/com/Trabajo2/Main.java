@@ -54,7 +54,7 @@ public class Main {
      * Metodo para imprimir el menu
      */
     private static void menu(){
-        System.out.println("***********************************");
+        System.out.println("************************************");
         System.out.println("Bienvenidos al juego de la primitiva.");
         System.out.println("1. - Jugar a la primitiva.");
         System.out.println("0. - Salir");
