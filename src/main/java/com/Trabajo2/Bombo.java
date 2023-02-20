@@ -28,18 +28,16 @@ public class Bombo {
 
     @Override
     public String toString() {
-        return "Bombo{" +
-                "rolledNums=" + Arrays.toString(primerBombo) +
-                ", complemento=" + complemento +
-                ", reintegro=" + reintegro +
-                '}';
+        return "Primer Bombo: " + Arrays.toString(primerBombo) +
+                ", Complemento: " + complemento +
+                ", Reintegro: " + reintegro;
     }
 
     /**
      * Generates an array that is filled with 6
      * @return Array of 6 rand nums.
      */
-    private int[] primerBombo() {
+    public int[] primerBombo() {
         int num;
         int[] numArr = new int[6];
         for (int i = 0; i < 6; i++) {
@@ -55,7 +53,7 @@ public class Bombo {
      * Generates a number between 1 and 49 separate from primerBombo.
      * @return Num between 1-49.
      */
-    private int complemento() {
+    public int complemento() {
         int num;
         do {
             num = randNum(1, 49);
@@ -67,7 +65,7 @@ public class Bombo {
      * Generates a random number between 0 and 9.
      * @return Num between 0-9.
      */
-    private int reintegro() {
+    public int reintegro() {
         return randNum(0, 9);
     }
 

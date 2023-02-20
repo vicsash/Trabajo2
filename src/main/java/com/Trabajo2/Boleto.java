@@ -2,6 +2,14 @@ package com.Trabajo2;
 import com.Trabajo2.Bombo;
 public class Boleto {
 
+    Bombo b = new Bombo();
+    int[] playerBombo = new int[6];
+    int playerComplemento = b.complemento();
+    int playerIntegro = b.reintegro();
+    public Boleto(int[] playerBombo) {
+        this.playerBombo = playerBombo;
+    }
+
     /**
      * se guarda el array nuemros en un nuevo nuevo array
      * par agregar al length + 2 posiciones para el reintegro y
@@ -25,14 +33,4 @@ public class Boleto {
     int reintegro = 8;
     int[] numerosConReintegro = guardarNumeros(numeros, numeroAdicional, reintegro);
      */
-
-    Boleto boleto = new Boleto();
-
-
-
-
-
-    public Boleto getBoleto() {
-        return boleto;
-    }
 }

@@ -14,6 +14,9 @@ public class Main {
         int[] playerNumber;
         Bombo bombo = new Bombo();
         int[] boletoAleatorio = Boleto.boleto(bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro());
+        Game juego = new Game();
+        int[] userNums = new int[6];
+        int userIn;
 
         do{
             menu();
@@ -27,19 +30,34 @@ public class Main {
                         lector.nextLine();
                         switch (submenu) {
                             case 1:
-                                System.out.println("1");
+                                System.out.println("Introduce tus numeros. (1-49)");
+                                for (int i = 0; i < 6; i++) {
+                                    userNums[i] = lector.nextInt();
+                                    lector.nextLine();
+                                }
+                                System.out.println(juego.juegoUnico(userNums));
+
+                                subMenu();
+
+                                break;
                             case 2:
                                 System.out.println("2");
+                                break;
                             case 3:
                                 System.out.println("3");
+                                break;
                             case 4:
                                 System.out.println("4");
+                                break;
                             case 5:
                                 System.out.println("5");
+                                break;
                             case 0:
                                 System.out.println("0");
+                                break;
                             default:
                                 System.out.println("Seleciona un numero entre 0-5");
+                                break;
                         }
                     }while(submenu != 0);
                 case 0:
@@ -74,4 +92,5 @@ public class Main {
         System.out.println("0. - Salir.");
         System.out.println("***********************************");
     }
+
 }
