@@ -1,5 +1,5 @@
 package com.Trabajo2;
-
+import com.Trabajo2.Bombo;
 public class Boleto {
 
     /**
@@ -26,5 +26,13 @@ public class Boleto {
     int[] numerosConReintegro = guardarNumeros(numeros, numeroAdicional, reintegro);
      */
 
+    Boleto boleto = new Boleto();
 
+
+
+
+
+    public Boleto getBoleto() {
+        return boleto;
+    }
 }

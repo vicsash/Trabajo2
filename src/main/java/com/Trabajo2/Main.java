@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args){
         int menu,submenu;
         int[] playerNumber;
-
+        Bombo bombo = new Bombo();
+        int[] boletoAleatorio = Boleto.boleto(bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro());
 
         do{
             menu();
