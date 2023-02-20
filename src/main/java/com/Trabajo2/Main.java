@@ -13,6 +13,7 @@ public class Main {
         int menu,submenu;
         int[] playerNumber;
         Bombo bombo = new Bombo();
+        Boleto boleto = new Boleto();
         int[] boletoAleatorio = Boleto.boleto(bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro());
         Game juego = new Game();
         int[] userNums = new int[6];
@@ -36,7 +37,7 @@ public class Main {
                                 userInStr = lector.nextLine();
                                 if (userInStr.equalsIgnoreCase("s")) {
                                     for (int i = 0; i < 6; i++) {
-                                        userNums[i] = bombo.primerBombo()[i];
+                                        userNums[i] = boleto.primerBombo()[i];
                                     }
                                 } else {
                                     System.out.println("Introduce tus numeros. (1-49)");
