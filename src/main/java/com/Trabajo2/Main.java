@@ -21,7 +21,7 @@ public class Main {
             switch(menu){
                 case 1:
 
-                    playerNumber  = firtsSixNumber();
+                    playerNumber  = firstSixNumber();
                     subMenu();
                     //PLACED HERE TO SEE THE RANDOM NUMBER THAT WAS GENERATED USING RAND
                     //TEMPORARY PLACE TO CONFIRM THAT IT WORKS
@@ -53,7 +53,7 @@ public class Main {
      * taking in account that there cant be 2 same numbers
      * @return array
      */
-    private static int[] firtsSixNumber(){
+    private static int[] firstSixNumber(){
         int[] array = new int[6];
         int numb;
         boolean go;
