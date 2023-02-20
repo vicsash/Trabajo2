@@ -15,7 +15,7 @@ public class Bombo {
         this.reintegro = reintegro();
     }
 
-    public int[] getRolledNums() {
+    public int[] getPrimerBombo() {
         return primerBombo;
     }
     public int getComplemento() {
