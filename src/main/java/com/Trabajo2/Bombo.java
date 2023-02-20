@@ -73,10 +73,10 @@ public class Bombo {
     /**
      * Resets the array.
      */
-    private void reset() {
-        for (int item : this.primerBombo) {
-            item = 0;
-        }
+    public void reset() {
+        this.primerBombo = primerBombo();
+        this.complemento = complemento();
+        this.reintegro = reintegro();
     }
 
     /**
