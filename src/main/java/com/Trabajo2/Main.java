@@ -15,18 +15,14 @@ public class Main {
 
 
         do{
-            System.out.println("Placeholder for menu 1 is to enter number 0 is exit");
+            menu();
             menu = lector.nextInt();
             lector.nextLine();
             switch(menu){
                 case 1:
 
                     playerNumber  = firtsSixNumber();
-                    System.out.println("************************************************************************");
-                    System.out.println("* Placeholder for game options                                         *");
-                    System.out.println("* 1-Single game, 2-Play till prize,3-Play till prize without reintegro *");
-                    System.out.println("* 4- play 100 games, 5- Play until,0-exit                              *");
-                    System.out.println("************************************************************************");
+                    subMenu();
                     //PLACED HERE TO SEE THE RANDOM NUMBER THAT WAS GENERATED USING RAND
                     //TEMPORARY PLACE TO CONFIRM THAT IT WORKS
                     System.out.println(Arrays.toString(playerNumber));
@@ -86,5 +82,28 @@ public class Main {
                 return false;
         }
         return true;
+    }
+
+    /**
+     * Metodo para imprimir el menu
+     */
+    private static void menu(){
+        System.out.println("Benividos al juego de la primitiva");
+        System.out.println("Pular 1 para jugar a primitiva");
+        System.out.println("Pulsar 0 para salir del menu");
+    }
+
+    /**
+     * Metodo para imprimir el submenu
+     */
+    private static void subMenu(){
+        System.out.println("***********************************");
+        System.out.println("1- Juego unico");
+        System.out.println("2- Jugar hasta premio");
+        System.out.println("3 - Jugar hasta premio sin reintegro");
+        System.out.println("4 - Jugar 100 jugadas");
+        System.out.println("5 - Jugar hasta premio especial");
+        System.out.println("0 - Salir");
+        System.out.println("***********************************");
     }
 }
