@@ -15,7 +15,6 @@ public class Bombo {
         this.reintegro = reintegro();
     }
 
-
     public int[] getPrimerBombo() {
         return primerBombo;
     }
@@ -104,4 +103,5 @@ public class Bombo {
         }
         return false;
     }
+
 }

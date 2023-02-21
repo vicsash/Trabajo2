@@ -4,13 +4,28 @@ import java.util.Random;
 
 public class Boleto {
 
-    Bombo b = new Bombo();
-    private int[] primerBombo = new int[6];
-    int[] playerBombo = new int[6];
-    int playerComplemento = b.complemento();
-    int playerIntegro = b.reintegro();
-    public Boleto(int[] playerBombo) {
-        this.playerBombo = playerBombo;
+    private Bombo b = new Bombo();
+    private int[] boletoNums = new int[6];
+    private int boletoComplemento = b.complemento();
+    private int boletoIntegro = b.reintegro();
+    public Boleto(int[] playerNums) {
+        this.boletoNums = playerNums;
+
+    }
+    public Boleto() {
+        this.boletoNums = b.primerBombo();
+    }
+
+    public int[] getBoletoNums() {
+        return boletoNums;
+    }
+
+    public int getBoletoComplemento() {
+        return boletoComplemento;
+    }
+
+    public int getBoletoIntegro() {
+        return boletoIntegro;
     }
 
     /**
