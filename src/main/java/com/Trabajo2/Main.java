@@ -2,13 +2,9 @@ package com.Trabajo2;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
 public class Main {
     static Random rand = new Random();
-    //private int reintegro;
-    //int complemntNumber;
     static Scanner lector = new Scanner(System.in);
-
     public static void main(String[] args){
         int menu,submenu;
         int[] playerNumber;
@@ -20,18 +16,19 @@ public class Main {
         int userIn;
         String userInStr;
         boolean aleatorio = false;
-
         do{
             menu();
             menu = lector.nextInt();
             lector.nextLine();
             switch(menu){
+                //Star games
                 case 1:
                     subMenu();
                     do {
                         submenu = lector.nextInt();
                         lector.nextLine();
                         switch (submenu) {
+                            //Single game
                             case 1:
                                 System.out.println("Quieres numeros aleatorios? (S/N)");
                                 userInStr = lector.nextLine();
@@ -46,26 +43,28 @@ public class Main {
                                         lector.nextLine();
                                     }
                                 }
-
                                 System.out.println(juego.juegoUnico(userNums));
-
                                 subMenu();
-
                                 break;
+                            //Play game until a prize is won
                             case 2:
                                 System.out.println("2");
                                 break;
+                            // Play game until prize without "reintegro"
                             case 3:
                                 System.out.println("3");
                                 break;
+                            //Play a hundred games
                             case 4:
                                 System.out.println("4");
                                 break;
+                            //Play until special prize is won
                             case 5:
                                 System.out.println("5");
                                 break;
+                            //Exit
                             case 0:
-                                System.out.println("0");
+                                //System.out.println("0");
                                 break;
                             default:
                                 System.out.println("Seleciona un numero entre 0-5");
@@ -74,14 +73,13 @@ public class Main {
                     }while(submenu != 0);
                 case 0:
                 default:
-
             }
         }while(menu != 0);
+        System.out.println("Muchas gracias por jugar. Que tenga un buen dia");
         lector.close();
     }
-
     /**
-     * Metodo para imprimir el menu
+     * Method to print out the main menu
      */
     private static void menu(){
         System.out.println("************************************");
@@ -92,7 +90,7 @@ public class Main {
     }
 
     /**
-     * Metodo para imprimir el submenu
+     * Method to print out the submenu with the six options
      */
     private static void subMenu(){
         System.out.println("***********************************");
@@ -104,5 +102,4 @@ public class Main {
         System.out.println("0. - Salir.");
         System.out.println("***********************************");
     }
-
 }
