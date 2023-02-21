@@ -23,28 +23,28 @@ public class Main {
             switch(menu){
                 //Star games
                 case 1:
-                    subMenu();
                     do {
+                        System.out.println("Quieres numeros aleatorios? (S/N)");
+                        userInStr = lector.nextLine();
+                        if (userInStr.equalsIgnoreCase("s")) {
+                            for (int i = 0; i < 6; i++) {
+                                userNums[i] = boleto.primerBombo()[i];
+                            }
+                        } else {
+                            System.out.println("Introduce tus numeros. (1-49)");
+                            for (int i = 0; i < 6; i++) {
+                                userNums[i] = lector.nextInt();
+                                lector.nextLine();
+                            }
+                        }
+                        subMenu();
                         submenu = lector.nextInt();
                         lector.nextLine();
                         switch (submenu) {
                             //Single game
                             case 1:
-                                System.out.println("Quieres numeros aleatorios? (S/N)");
-                                userInStr = lector.nextLine();
-                                if (userInStr.equalsIgnoreCase("s")) {
-                                    for (int i = 0; i < 6; i++) {
-                                        userNums[i] = boleto.primerBombo()[i];
-                                    }
-                                } else {
-                                    System.out.println("Introduce tus numeros. (1-49)");
-                                    for (int i = 0; i < 6; i++) {
-                                        userNums[i] = lector.nextInt();
-                                        lector.nextLine();
-                                    }
-                                }
+
                                 System.out.println(juego.juegoUnico(userNums));
-                                subMenu();
                                 break;
                             //Play game until a prize is won
                             case 2:
