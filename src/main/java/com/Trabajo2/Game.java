@@ -14,15 +14,12 @@ public class Game {
     static int cat5 = 0;
 
 
-    public String juegoUnico(int[] userNums) {
-        Bombo bombo = new Bombo();
-        Boleto boleto = new Boleto(userNums);
-        int userComplemento = bombo.complemento();
-        int userReintegro = bombo.reintegro();
+    public String juegoUnico(Boleto userBoleto) {
+        Boleto cpu = new Boleto();
 
-        System.out.println("Tus Numeros: " + Arrays.toString(userNums) + ", Tu Complemento: " + userComplemento + ", Tu Reintegro: " + userReintegro);
-        System.out.println(bombo.toString());
-        switch (apuestasPremiadas(userNums, userComplemento, userReintegro, bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro())) {
+        System.out.println("Tu Boleto: " + userBoleto.toString());
+        System.out.println(cpu); // toString?
+        switch (apuestasPremiadas(userBoleto.getBoletoNums(), userBoleto.getBoletoComplemento(), userBoleto.getBoletoIntegro(), cpu.getBoletoNums(), cpu.getBoletoComplemento(), cpu.getBoletoIntegro())) {
             case -1:
                 gamesLost++;
                 return "No has ganado.";

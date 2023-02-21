@@ -24,34 +24,28 @@ public class Main {
                 //Star games
                 case 1:
                     do {
-                        System.out.println("Quieres numeros aleatorios? (S/N)");
-                        userInStr = lector.nextLine();
-                        if (userInStr.equalsIgnoreCase("s")) {
-                            for (int i = 0; i < 6; i++) {
-                                Boleto userBoleto = new Boleto();
-                            }
-                        } else {
-                            System.out.println("Introduce tus numeros. (1-49)");
-                            //int[] userNums2 = new int[]{lector.nextInt()};
-                            //pruebas.validarEntrada(new int[]{userNums2});
-                            for (int i = 0; i < 6; i++) {
-                                userNums[i] = lector.nextInt();
-                                lector.nextLine();
-                                if ((userNums[i] > 1) || (userNums[i] < 49)) {
-                                    System.out.println("El número introducido no está dentro del rango permitido.");
-                                    i--;
-                                }
-                            }
-                            Boleto userBoleto = new Boleto(userNums);
-                        }
                         subMenu();
                         submenu = lector.nextInt();
                         lector.nextLine();
                         switch (submenu) {
                             //Single game
                             case 1:
-
-                                System.out.println(juego.juegoUnico(userNums));
+                                Boleto userBoleto = new Boleto();
+                                System.out.println("Quieres numeros aleatorios? (S/N)");
+                                userInStr = lector.nextLine();
+                                if (userInStr.equalsIgnoreCase("n")) {
+                                    System.out.println("Introduce tus numeros. (1-49)");
+                                    for (int i = 0; i < 6; i++) {
+                                        userNums[i] = lector.nextInt();
+                                        lector.nextLine();
+                                        if ((userNums[i] < 1) || (userNums[i] > 49)) {
+                                            System.out.println("El número introducido no está dentro del rango permitido.");
+                                            i--;
+                                        }
+                                    }
+                                    userBoleto = new Boleto(userNums);
+                                }
+                                System.out.println(juego.juegoUnico(userBoleto));
                                 break;
                             //Play game until a prize is won
                             case 2:

@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Bombo {
 
-    private int[] primerBombo = new int[6];
+    private int[] primerBombo;
     private int complemento;
     private int reintegro;
 
@@ -42,7 +42,7 @@ public class Bombo {
         for (int i = 0; i < 6; i++) {
             do {
                 num = randNum(1, 49);
-            } while (containsNum(num));
+            } while (containsNum(num, numArr));
             numArr[i] = num;
         }
         return numArr;
@@ -53,10 +53,7 @@ public class Bombo {
      * @return Num between 1-49.
      */
     public int complemento() {
-        int num;
-        do {
-            num = randNum(1, 49);
-        } while (containsNum(num));
+        int num = randNum(1, 49);
         return num;
     }
 
@@ -96,8 +93,8 @@ public class Bombo {
      * @param num Num to check.
      * @return True or false depending on if the num is in arr.
      */
-    private boolean containsNum(int num) {
-        for (int item : primerBombo) {
+    private boolean containsNum(int num, int[] numArr) {
+        for (int item : numArr) {
             if (item == num)
                 return true;
         }
