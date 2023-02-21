@@ -36,42 +36,11 @@ public class Boleto {
     int reintegro = 8;
     int[] numerosConReintegro = guardarNumeros(numeros, numeroAdicional, reintegro);
      */
-    /**
-     * Generates an array that is filled with 6
-     * @return Array of 6 rand nums.
-     */
 
-    private boolean containsNum(int num) {
-        for (int item : primerBombo) {
-            if (item == num)
-                return true;
-        }
-        return false;
+
+    public static int[] boleto2(){
+        Bombo bombo = new Bombo();
+        return bombo.primerBombo();
     }
 
-    public int[] primerBombo() {
-        int num;
-        int[] numArr = new int[6];
-        for (int i = 0; i < 6; i++) {
-            do {
-                num = randNum(1, 49);
-            } while (containsNum(num));
-            numArr[i] = num;
-        }
-        return numArr;
-    }
-    private int randNum(int min, int max) {
-        Random rand = new Random();
-        int output;
-
-        output = rand.nextInt(max - min + 1) + min;
-        return output;
-    }
-    public void reset() {
-        this.primerBombo = primerBombo();
-    }
-
-    public Boleto() {
-        this.primerBombo = primerBombo();
-    }
 }
