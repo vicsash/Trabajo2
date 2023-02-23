@@ -1,7 +1,5 @@
 package com.Trabajo2;
 
-import java.util.Arrays;
-
 public class Game {
 
     static int gamesWon = 0;
@@ -50,6 +48,33 @@ public class Game {
         }
         return "err";
     }
+
+    /**
+     * es un metodo que se ejecuta hasta obtener el premio especial
+     * pero como se puede ejecutar muchas veces le he puesto una pausa de 1 segundo
+     * para que no consuma mucha cpu.
+     * @param userBoleto el boleto del user para comprar.
+     * @return devuelve si has ganado o no.
+     */
+    public boolean jugarHastaPremioEspecial(Boleto userBoleto) {
+        Boleto cpu = new Boleto();
+
+        while (true) {
+            String resultadoJuego = juegoUnico(userBoleto);
+            if (resultadoJuego.equals("Has ganado el premio especial!")) {
+                System.out.println(resultadoJuego);
+                return true;
+            }
+            try {
+                Thread.sleep(1000); // Pausa de un segundo
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
 
     private int apuestasPremiadas(int[] userNums, int userComp, int userReintegro, int[] cpuBombo, int cpuComp, int cpuReintegro) {
         int amountCorrect = 0;

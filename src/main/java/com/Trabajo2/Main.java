@@ -30,26 +30,13 @@ public class Main {
                         switch (submenu) {
                             //Single game
                             case 1:
-                                Boleto userBoleto = new Boleto();
-                                System.out.println("Quieres numeros aleatorios? (S/N)");
-                                userInStr = lector.nextLine();
-                                if (userInStr.equalsIgnoreCase("n")) {
-                                    System.out.println("Introduce tus numeros. (1-49)");
-                                    for (int i = 0; i < 6; i++) {
-                                        userNums[i] = lector.nextInt();
-                                        lector.nextLine();
-                                        if ((userNums[i] < 1) || (userNums[i] > 49)) {
-                                            System.out.println("El número introducido no está dentro del rango permitido.");
-                                            i--;
-                                        }
-                                    }
-                                    userBoleto = new Boleto(userNums);
-                                }
+                                Boleto userBoleto = pedirNumerosBoleto();
                                 System.out.println(juego.juegoUnico(userBoleto));
                                 break;
                             //Play game until a prize is won
                             case 2:
-                                System.out.println("2");
+                                Boleto userBoleto2 = pedirNumerosBoleto();
+                               System.out.println(juego.jugarHastaPremioEspecial(userBoleto2));
                                 break;
                             // Play game until prize without "reintegro"
                             case 3:
@@ -103,4 +90,32 @@ public class Main {
         System.out.println("0. - Salir.");
         System.out.println("***********************************");
     }
+
+    /**
+     * pide los numeros del boleto si quieres que sean manuales o aleatorios.
+     * @return devuelve los numeros del boleto.
+     */
+    public static Boleto pedirNumerosBoleto() {
+        Scanner lector = new Scanner(System.in);
+        int[] userNums = new int[6];
+        Boleto userBoleto = new Boleto();
+        System.out.println("Quieres numeros aleatorios? (S/N)");
+        String userInStr = lector.nextLine();
+        if (userInStr.equalsIgnoreCase("n")) {
+            System.out.println("Introduce tus numeros. (1-49)");
+            for (int i = 0; i < 6; i++) {
+                userNums[i] = lector.nextInt();
+                lector.nextLine();
+                if ((userNums[i] < 1) || (userNums[i] > 49)) {
+                    System.out.println("El número introducido no está dentro del rango permitido.");
+                    i--;
+                }
+            }
+            userBoleto = new Boleto(userNums);
+        } else {
+            userBoleto = new Boleto(); // Generar un boleto aleatorio si el usuario no quiere introducir sus números
+        }
+        return userBoleto;
+    }
+
 }
