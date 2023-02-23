@@ -35,8 +35,7 @@ public class Main {
                                 break;
                             //Play game until a prize is won
                             case 2:
-                                Boleto userBoleto2 = pedirNumerosBoleto();
-                               System.out.println(juego.jugarHastaPremioEspecial(userBoleto2));
+                                System.out.println("2");
                                 break;
                             // Play game until prize without "reintegro"
                             case 3:
@@ -50,7 +49,8 @@ public class Main {
                                 break;
                             //Play until special prize is won
                             case 5:
-                                System.out.println("5");
+                                Boleto userBoleto2 = pedirNumerosBoleto();
+                                System.out.println(juego.jugarHastaPremioEspecial(userBoleto2));
                                 break;
                             //Exit
                             case 0:

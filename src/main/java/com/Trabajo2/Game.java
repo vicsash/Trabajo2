@@ -53,26 +53,28 @@ public class Game {
 
     /**
      * es un metodo que se ejecuta hasta obtener el premio especial
-     * pero como se puede ejecutar muchas veces le he puesto una pausa de 1 segundo
+     * pero como se puede ejecutar muchas veces le he puesto una pausa de medio segundo
      * para que no consuma mucha cpu.
      * @param userBoleto el boleto del user para comprar.
      * @return devuelve si has ganado o no.
      */
     public boolean jugarHastaPremioEspecial(Boleto userBoleto) {
-        Boleto cpu = new Boleto();
-
+        //Boleto cpu = new Boleto();
+        int vecesEjecutadas = 0;
         while (true) {
             String resultadoJuego = juegoUnico(userBoleto);
             if (resultadoJuego.equals("Has ganado el premio especial!")) {
-                System.out.println(resultadoJuego);
+                System.out.println(resultadoJuego + vecesEjecutadas);
                 return true;
             }
             try {
-                Thread.sleep(1000); // Pausa de un segundo
+                Thread.sleep(500); // Pausa de medio segundo
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        vecesEjecutadas++;
         }
+
     }
 
 
