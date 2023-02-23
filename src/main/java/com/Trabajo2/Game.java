@@ -1,5 +1,7 @@
 package com.Trabajo2;
 
+import java.util.Arrays;
+
 public class Game {
 
     static int gamesWon = 0;
@@ -72,6 +74,55 @@ public class Game {
             }
         }
     }
+
+
+    /**
+     * Metodo para cien jugas que es similar a juego unico
+     * para guardar los datos de que has ganado y perdido usamos un
+     * array de numero y contador para tener un bucle para 100 paratidas
+     * @param userBoleto
+     * @return
+     */
+    public String cienJagadas(Boleto userBoleto) {
+        Boleto cpu = new Boleto();
+        int[] cienpartidas = new int[6];
+        System.out.println("Tu Boleto: " + userBoleto.toString());
+        int counter = 0;
+        do {
+            switch (apuestasPremiadas(userBoleto.getBoletoNums(), userBoleto.getBoletoComplemento(), userBoleto.getBoletoIntegro(), cpu.getBoletoNums(), cpu.getBoletoComplemento(), cpu.getBoletoIntegro())) {
+                case -1:
+                    cienpartidas[0] += 1;
+                    counter++;
+                    break;
+                case 0:
+                    cienpartidas[1] += 1;
+                    counter++;
+                    break;
+                case 1:
+                    cienpartidas[2] += 1;
+                    counter++;
+                    break;
+                case 2:
+                    cienpartidas[3] += 1;
+                    counter++;
+                    break;
+                case 3:
+                    cienpartidas[4] += 1;
+                    counter++;
+                    break;
+                case 4:
+                    cienpartidas[5] += 1;
+                    counter++;
+                    break;
+                case 5:
+                    cienpartidas[6] += 1;
+                    counter++;
+                    break;
+            }
+        }while(counter < 100);
+        return Arrays.toString(cienpartidas);
+    }
+
 
 
 

@@ -44,7 +44,9 @@ public class Main {
                                 break;
                             //Play a hundred games
                             case 4:
-                                System.out.println("4");
+                                Boleto userBoleto4 = pedirNumerosBoleto();
+
+                                System.out.println(juego.cienJagadas(userBoleto4));
                                 break;
                             //Play until special prize is won
                             case 5:
@@ -70,25 +72,25 @@ public class Main {
      * Method to print out the main menu
      */
     private static void menu(){
-        System.out.println("************************************");
+        System.out.println("*************************************");
         System.out.println("Bienvenidos al juego de la primitiva.");
         System.out.println("1. - Jugar a la primitiva.");
         System.out.println("0. - Salir");
-        System.out.println("***********************************");
+        System.out.println("*************************************");
     }
 
     /**
      * Method to print out the submenu with the six options
      */
     private static void subMenu(){
-        System.out.println("***********************************");
+        System.out.println("**************************************");
         System.out.println("1. - Juego unico.");
         System.out.println("2. - Jugar hasta premio.");
         System.out.println("3. - Jugar hasta premio sin reintegro.");
         System.out.println("4. - Jugar 100 jugadas.");
         System.out.println("5. - Jugar hasta premio especial.");
         System.out.println("0. - Salir.");
-        System.out.println("***********************************");
+        System.out.println("**************************************");
     }
 
     /**
