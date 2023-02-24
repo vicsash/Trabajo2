@@ -87,7 +87,7 @@ public class Game {
      */
     public String cienJagadas(Boleto userBoleto) {
         Boleto cpu = new Boleto();
-        int[] cienpartidas = new int[6];
+        int[] cienpartidas = new int[7];
         System.out.println("Tu Boleto: " + userBoleto.toString());
         int counter = 0;
         do {
