@@ -105,14 +105,14 @@ public class Game {
      * para guardar los datos de que has ganado y perdido usamos un
      * array de numero y contador para tener un bucle para 100 paratidas
      * @param userBoleto
-     * @return
+     * @return an array of all categories and number of game lost
      */
-    public String cienJagadas(Boleto userBoleto) {
-        Boleto cpu = new Boleto();
+    public String diezMilJugadas(Boleto userBoleto, int numJugadas) {
         int[] cienpartidas = new int[7];
         System.out.println("Tu Boleto: " + userBoleto.toString());
         int counter = 0;
         do {
+            Boleto cpu = new Boleto();
             switch (apuestasPremiadas(userBoleto.getBoletoNums(), userBoleto.getBoletoComplemento(), userBoleto.getBoletoIntegro(), cpu.getBoletoNums(), cpu.getBoletoComplemento(), cpu.getBoletoIntegro())) {
                 case -1:
                     cienpartidas[0] += 1;
@@ -143,7 +143,7 @@ public class Game {
                     counter++;
                     break;
             }
-        }while(counter < 100);
+        }while(counter < numJugadas);
         return Arrays.toString(cienpartidas);
     }
 

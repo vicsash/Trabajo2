@@ -1,11 +1,11 @@
 package com.Trabajo2;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class Main {
     static Random rand = new Random();
     static Scanner lector = new Scanner(System.in);
     public static void main(String[] args){
+        final int NUMEROJUGADAS = 10000;
         int menu,submenu;
         int[] playerNumber;
         Bombo bombo = new Bombo();
@@ -44,11 +44,10 @@ public class Main {
                                 Boleto userBoleto3 = pedirNumerosBoleto();
                                 System.out.println(juego.juegoIndefinido(userBoleto3, true));
                                 break;
-                            //Play a hundred games
+                            //Play a 10000 games
                             case 4:
                                 Boleto userBoleto4 = pedirNumerosBoleto();
-
-                                System.out.println(juego.cienJagadas(userBoleto4));
+                                System.out.println(juego.diezMilJugadas(userBoleto4,NUMEROJUGADAS));
                                 break;
                             //Play until special prize is won
                             case 5:
@@ -97,7 +96,7 @@ public class Main {
     }
 
     /**
-     * pide los numeros del boleto si quieres que sean manuales o aleatorios.
+     * Pide los numeros del boleto si quieres que sean manuales o aleatorios.
      * @return devuelve los numeros del boleto.
      */
     public static Boleto pedirNumerosBoleto() {
@@ -118,7 +117,8 @@ public class Main {
             }
             userBoleto = new Boleto(userNums);
         } else {
-            userBoleto = new Boleto(); // Generar un boleto aleatorio si el usuario no quiere introducir sus números
+            // Generar un boleto aleatorio si el usuario no quiere introducir sus números
+            userBoleto = new Boleto();
         }
         return userBoleto;
     }
