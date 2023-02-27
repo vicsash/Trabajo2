@@ -35,7 +35,9 @@ public class Main {
                                 break;
                             //Play game until a prize is won
                             case 2:
-                                System.out.println("2");
+                                Boleto userBoleto2 = pedirNumerosBoleto();
+                                System.out.println(juego.juegoIndefinido(userBoleto2));
+                                //System.out.println("2");
                                 break;
                             // Play game until prize without "reintegro"
                             case 3:
@@ -49,8 +51,8 @@ public class Main {
                                 break;
                             //Play until special prize is won
                             case 5:
-                                Boleto userBoleto2 = pedirNumerosBoleto();
-                                System.out.println(juego.jugarHastaPremioEspecial(userBoleto2));
+                                Boleto userBoleto5 = pedirNumerosBoleto();
+                                System.out.println(juego.jugarHastaPremioEspecial(userBoleto5));
                                 break;
                             //Exit
                             case 0:
@@ -83,11 +85,11 @@ public class Main {
      * Method to print out the submenu with the six options
      */
     private static void subMenu(){
-        System.out.println("**************************************");
+        System.out.println("***************************************");
         System.out.println("1. - Juego unico.");
         System.out.println("2. - Jugar hasta premio.");
         System.out.println("3. - Jugar hasta premio sin reintegro.");
-        System.out.println("4. - Jugar 100 jugadas.");
+        System.out.println("4. - Jugar 10000 jugadas.");
         System.out.println("5. - Jugar hasta premio especial.");
         System.out.println("0. - Salir.");
         System.out.println("**************************************");

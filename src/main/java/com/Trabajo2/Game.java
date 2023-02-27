@@ -52,6 +52,19 @@ public class Game {
     }
 
     /**
+     * Ejecutando el metodo de juego unico hasta que
+     * toque algun tipo de premio
+     */
+    public String juegoIndefinido(Boleto userBoleto) {
+        while (true) {
+            String result = juegoUnico(userBoleto);
+            if (!result.equals("No has ganado.")) {
+                return result;
+            }
+        }
+    }
+
+    /**
      * es un metodo que se ejecuta hasta obtener el premio especial
      * pero como se puede ejecutar muchas veces le he puesto una pausa de medio segundo
      * para que no consuma mucha cpu.

@@ -54,17 +54,7 @@ public class Boleto {
         numerosReintegro[numeros.length + 1] = reintegro;
         return numerosReintegro;
     }
-    /* para usar el metodo
-    int[] numeros = {1, 2, 3, 4, 5, 6};
-    int numeroAdicional = 7;
-    int reintegro = 8;
-    int[] numerosConReintegro = guardarNumeros(numeros, numeroAdicional, reintegro);
-     */
 
 
-    public static int[] boleto2(){
-        Bombo bombo = new Bombo();
-        return bombo.primerBombo();
-    }
 
 }
