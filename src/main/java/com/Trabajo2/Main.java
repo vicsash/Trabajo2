@@ -36,12 +36,13 @@ public class Main {
                             //Play game until a prize is won
                             case 2:
                                 Boleto userBoleto2 = pedirNumerosBoleto();
-                                System.out.println(juego.juegoIndefinido(userBoleto2));
+                                System.out.println(juego.juegoIndefinido(userBoleto2, false));
                                 //System.out.println("2");
                                 break;
                             // Play game until prize without "reintegro"
                             case 3:
-                                System.out.println("3");
+                                Boleto userBoleto3 = pedirNumerosBoleto();
+                                System.out.println(juego.juegoIndefinido(userBoleto3, true));
                                 break;
                             //Play a hundred games
                             case 4:

@@ -18,7 +18,7 @@ public class Game {
         Boleto cpu = new Boleto();
 
         System.out.println("Tu Boleto: " + userBoleto.toString());
-        System.out.println(cpu); // toString?
+        System.out.println(cpu);
         switch (apuestasPremiadas(userBoleto.getBoletoNums(), userBoleto.getBoletoComplemento(), userBoleto.getBoletoIntegro(), cpu.getBoletoNums(), cpu.getBoletoComplemento(), cpu.getBoletoIntegro())) {
             case -1:
                 gamesLost++;
@@ -55,13 +55,23 @@ public class Game {
      * Ejecutando el metodo de juego unico hasta que
      * toque algun tipo de premio
      */
-    public String juegoIndefinido(Boleto userBoleto) {
-        while (true) {
-            String result = juegoUnico(userBoleto);
-            if (!result.equals("No has ganado.")) {
-                return result;
+    public String juegoIndefinido(Boleto userBoleto, boolean hastaCat5) {
+        if (hastaCat5) {
+            while (true) {
+                String result = juegoUnico(userBoleto);
+                if (!result.equals("No has ganado.") && !result.equals("Has ganado el premio especial!")) {
+                    return result;
+                }
+            }
+        } else {
+            while (true) {
+                String result = juegoUnico(userBoleto);
+                if (!result.equals("No has ganado.")) {
+                    return result;
+                }
             }
         }
+
     }
 
     /**
@@ -72,7 +82,6 @@ public class Game {
      * @return devuelve si has ganado o no.
      */
     public boolean jugarHastaPremioEspecial(Boleto userBoleto) {
-        //Boleto cpu = new Boleto();
         int vecesEjecutadas = 0;
         while (true) {
             String resultadoJuego = juegoUnico(userBoleto);
