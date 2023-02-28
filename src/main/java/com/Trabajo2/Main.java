@@ -115,6 +115,13 @@ public class Main {
         }
         return userBoleto;
     }
+
+    /**
+     * Un stringbuiler para contruir un String para explicar la cantidad de premios
+     * y perdiads
+     * @param aray que recibe del game
+     * @return un string explicando el significado de cada numero
+     */
     public static String recordOfWinLose(int [] aray){
         StringBuilder sb = new StringBuilder();
         sb.append("Juegos perdidos-").append(aray[0]).append("\n");
