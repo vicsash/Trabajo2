@@ -39,7 +39,8 @@ public class Main {
                             // Juego hasta obtener premio sin reintegro
                             case 4:
                                 Boleto userBoleto4 = pedirNumerosBoleto();
-                                System.out.println(juego.diezMilJugadas(userBoleto4,NUMEROJUGADAS));
+                                System.out.println("Tu Boleto: " + userBoleto4);
+                                System.out.println(recordOfWinLose(juego.diezMilJugadas(userBoleto4,NUMEROJUGADAS)));
                                 break;
                             // Ciclo de 10000 sorteos
                             case 5:
@@ -114,5 +115,15 @@ public class Main {
         }
         return userBoleto;
     }
-
+    public static String recordOfWinLose(int [] aray){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Juegos perdidos-").append(aray[0]).append("\n");
+        sb.append("Juegos ganados categoria especial- ").append(aray[1]).append("\n");
+        sb.append("Juegos ganados categoria 1- ").append(aray[2]).append("\n");
+        sb.append("Juegos ganados categoria 2- ").append(aray[3]).append("\n");
+        sb.append("Juegos ganados categoria 3- ").append(aray[4]).append("\n");
+        sb.append("Juegos ganados categoria 4- ").append(aray[5]).append("\n");
+        sb.append("Juegos ganados categoria 5- ").append(aray[6]).append("\n");
+        return sb.toString();
+    }
 }

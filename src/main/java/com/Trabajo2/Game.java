@@ -113,14 +113,13 @@ public class Game {
     /**
      * Metodo para el numero de jugadas que es similar a juego unico
      * para guardar los datos de que has ganado y perdido usamos un
-     * array de numero y contador para tener un bucle para 100 paratidas
-     * @return an array of all categories and number of game lost
+     * array de numero y contador para tener un bucle para 10000 paratidas
+     * @return devuelve un array con todos casos de categorias y perdidas
      */
-    public String diezMilJugadas(Boleto userBoleto, int numJugadas) {
+    public int[] diezMilJugadas(Boleto userBoleto, int numJugadas) {
         this.userBoleto = userBoleto;
         this.numJugadas = numJugadas;
         int[] numJugadas2 = new int[7];
-        System.out.println("Tu Boleto: " + userBoleto.toString());
         int counter = 0;
         do {
             Boleto cpu = new Boleto();
@@ -156,10 +155,7 @@ public class Game {
             }
         }while(counter < numJugadas);
 
-
-        String resultado = Arrays.toString(numJugadas2);
-
-        return "Resultado: " + resultado;
+        return numJugadas2;
     }
 
 
