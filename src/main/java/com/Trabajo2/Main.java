@@ -7,15 +7,7 @@ public class Main {
     public static void main(String[] args){
         final int NUMEROJUGADAS = 10000;
         int menu,submenu;
-        int[] playerNumber;
-        Bombo bombo = new Bombo();
-        //int[] boleto2 = Boleto.boleto2();
-        int[] boletoAleatorio = Boleto.boleto(bombo.getPrimerBombo(), bombo.getComplemento(), bombo.getReintegro());
         Game juego = new Game();
-        int[] userNums = new int[6];
-        int userIn;
-        String userInStr;
-        boolean aleatorio = false;
         do{
             menu();
             menu = lector.nextInt();
@@ -33,30 +25,30 @@ public class Main {
                                 Boleto userBoleto = pedirNumerosBoleto();
                                 System.out.println(juego.juegoUnico(userBoleto));
                                 break;
-                            //Play game until a prize is won
+                            //Juego unico
                             case 2:
                                 Boleto userBoleto2 = pedirNumerosBoleto();
                                 System.out.println(juego.juegoIndefinido(userBoleto2, false));
                                 //System.out.println("2");
                                 break;
-                            // Play game until prize without "reintegro"
+                            // Juego hasta obtener premio
                             case 3:
                                 Boleto userBoleto3 = pedirNumerosBoleto();
                                 System.out.println(juego.juegoIndefinido(userBoleto3, true));
                                 break;
-                            //Play a 10000 games
+                            // Juego hasta obtener premio sin reintegro
                             case 4:
                                 Boleto userBoleto4 = pedirNumerosBoleto();
                                 System.out.println(juego.diezMilJugadas(userBoleto4,NUMEROJUGADAS));
                                 break;
-                            //Play until special prize is won
+                            // Ciclo de 10000 sorteos
                             case 5:
                                 Boleto userBoleto5 = pedirNumerosBoleto();
                                 System.out.println(juego.jugarHastaPremioEspecial(userBoleto5));
                                 break;
-                            //Exit
+                            // Jugar hasta obtener premio categoría especial
                             case 0:
-                                //System.out.println("0");
+
                                 break;
                             default:
                                 System.out.println("Seleciona un numero entre 0-5");

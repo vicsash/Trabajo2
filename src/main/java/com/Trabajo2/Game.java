@@ -12,6 +12,14 @@ public class Game {
     static int cat3 = 0;
     static int cat4 = 0;
     static int cat5 = 0;
+    private int[] userNums;
+    private int userComp;
+    private int userReintegro;
+    private int[] cpuBombo;
+    private int cpuComp;
+    private int cpuReintegro;
+    private Boleto userBoleto;
+    private int numJugadas;
 
 
     public String juegoUnico(Boleto userBoleto) {
@@ -53,7 +61,9 @@ public class Game {
 
     /**
      * Ejecutando el metodo de juego unico hasta que
-     * toque algun tipo de premio
+     * toque algun tipo de premio tambien puedes ejecutar
+     * la segunda modalidad del juego que es la de jugar hasta
+     * obtener el pemio sin reitegro.
      */
     public String juegoIndefinido(Boleto userBoleto, boolean hastaCat5) {
         if (hastaCat5) {
@@ -76,7 +86,7 @@ public class Game {
 
     /**
      * es un metodo que se ejecuta hasta obtener el premio especial
-     * pero como se puede ejecutar muchas veces le he puesto una pausa de medio segundo
+     * pero como se puede ejecutar muchas veces le he puesto una pausa de un milisecond
      * para que no consuma mucha cpu.
      * @param userBoleto el boleto del user para comprar.
      * @return devuelve si has ganado o no.
@@ -90,7 +100,7 @@ public class Game {
                 return true;
             }
             try {
-                Thread.sleep(500); // Pausa de medio segundo
+                Thread.sleep(1); // Pausa de un milis
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -101,50 +111,55 @@ public class Game {
 
 
     /**
-     * Metodo para cien jugas que es similar a juego unico
+     * Metodo para el numero de jugadas que es similar a juego unico
      * para guardar los datos de que has ganado y perdido usamos un
      * array de numero y contador para tener un bucle para 100 paratidas
-     * @param userBoleto
      * @return an array of all categories and number of game lost
      */
     public String diezMilJugadas(Boleto userBoleto, int numJugadas) {
-        int[] cienpartidas = new int[7];
+        this.userBoleto = userBoleto;
+        this.numJugadas = numJugadas;
+        int[] numJugadas2 = new int[7];
         System.out.println("Tu Boleto: " + userBoleto.toString());
         int counter = 0;
         do {
             Boleto cpu = new Boleto();
             switch (apuestasPremiadas(userBoleto.getBoletoNums(), userBoleto.getBoletoComplemento(), userBoleto.getBoletoIntegro(), cpu.getBoletoNums(), cpu.getBoletoComplemento(), cpu.getBoletoIntegro())) {
                 case -1:
-                    cienpartidas[0] += 1;
+                    numJugadas2[0] += 1;
                     counter++;
                     break;
                 case 0:
-                    cienpartidas[1] += 1;
+                    numJugadas2[1] += 1;
                     counter++;
                     break;
                 case 1:
-                    cienpartidas[2] += 1;
+                    numJugadas2[2] += 1;
                     counter++;
                     break;
                 case 2:
-                    cienpartidas[3] += 1;
+                    numJugadas2[3] += 1;
                     counter++;
                     break;
                 case 3:
-                    cienpartidas[4] += 1;
+                    numJugadas2[4] += 1;
                     counter++;
                     break;
                 case 4:
-                    cienpartidas[5] += 1;
+                    numJugadas2[5] += 1;
                     counter++;
                     break;
                 case 5:
-                    cienpartidas[6] += 1;
+                    numJugadas2[6] += 1;
                     counter++;
                     break;
             }
         }while(counter < numJugadas);
-        return Arrays.toString(cienpartidas);
+
+
+        String resultado = Arrays.toString(numJugadas2);
+
+        return "Resultado: " + resultado;
     }
 
 
@@ -152,6 +167,12 @@ public class Game {
 
 
     private int apuestasPremiadas(int[] userNums, int userComp, int userReintegro, int[] cpuBombo, int cpuComp, int cpuReintegro) {
+        this.userNums = userNums;
+        this.userComp = userComp;
+        this.userReintegro = userReintegro;
+        this.cpuBombo = cpuBombo;
+        this.cpuComp = cpuComp;
+        this.cpuReintegro = cpuReintegro;
         int amountCorrect = 0;
         boolean correctComp = false;
         boolean correctReintegro = false;
